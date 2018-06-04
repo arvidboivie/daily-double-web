@@ -1,2 +1,2 @@
 # daily-double-web
-Frontend for https://github.com/arvidboivie/daily-double
+Frontend for https://github.com/arvidboivie/daily
