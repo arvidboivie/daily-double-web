@@ -9,8 +9,10 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
   $( function() {
-    function display( id, creator ) {
+    function display( id, creator, playlist_name ) {
+        $( "#results" ).append( '<h1>' + playlist_name + '</h1>' );
         $( "#results" ).append( '<iframe src="https://embed.spotify.com/?uri=spotify:user:'+ creator + ':playlist:' + id + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>' );
+        $( "#results" ).append( '<br />' );
     }
 
     $( "#search" ).autocomplete({
@@ -21,7 +23,7 @@
         select: function( event, ui ) {
             event.preventDefault();
             $("#search").val(ui.item.label);
-            display( ui.item.playlist, ui.item.creator );
+            display( ui.item.playlist, ui.item.creator, ui.item.playlist_name );
         },
         focus: function(event, ui) {
             event.preventDefault();
